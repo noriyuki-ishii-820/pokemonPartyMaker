@@ -53,6 +53,10 @@ body {
   font-size: 20px;
 }
 
+.list {
+  width:100%;
+}
+
 .pokemonLine {
   height: 100px;
   line-height: 100px;
@@ -63,17 +67,14 @@ body {
   padding-left: 10px;
   display: flex;
   align-items: center;
-  width:100%;
 }
 
-.delete {
-  display:block;
-  right: 0;
+.list .delete {
+  float:right;
 }
 
-li .button {
-  float: right;
-  height: 50px;
+.disappear {
+  display:none !important;
 }
 
 .submitBox {

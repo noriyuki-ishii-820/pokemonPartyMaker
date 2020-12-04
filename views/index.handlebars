@@ -12,8 +12,6 @@
                 <input type="text" id="pokemonText" name="pokemon" placeholder="Search Your Pokemon">
                 <button type="submit" id="submit" class="button is-success submitBtn">Submit</button>
             </div>
-
-            <p>Enter a burger you want to eat and click the "Submit" button!</p>
         </form>
     </div>
 </div>
@@ -25,9 +23,14 @@
         <ul class="list">
             {{#each pokemonParty}}
             <li class="pokemonLine"><img src="{{this.pokeImage}}"> {{this.pokeName}} 
-            <a class="delete is-large" data-id="{{this.id}}"></a>
+            <button class="tag typeOne" type-id="{{this.type1}}">{{this.type1}}</button>
+            {{#if type2}}
+            <button class="tag typeTwo" type-id="{{this.type2}}">{{this.type2}}</button>
+            {{/if}}
+            <div class="delete is-large" data-id="{{this.id}}"></div>
             </li>
             {{/each}}
         </ul>
     </div>
 </div>
+

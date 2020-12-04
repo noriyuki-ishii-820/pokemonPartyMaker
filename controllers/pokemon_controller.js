@@ -17,8 +17,8 @@ router.get("/", function (req, res) {
 
 router.post("/api/pokemon", function (req, res) {
   pokemon.insertOne(
-    ["pokeName", "pokeImage"],
-    [req.body.pokeName,  req.body.pokeImage],
+    ["pokeName", "pokeImage", "type1", "type2"],
+    [req.body.pokeName,  req.body.pokeImage, req.body.type1, req.body.type2],
     function (result) {
       res.json({ id: result.insertId });
     }
