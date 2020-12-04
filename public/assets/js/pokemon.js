@@ -1,5 +1,4 @@
 //const { post } = require("../../../controllers/pokemon_controller");
-
 $(function () {
   $(".delete").on("click", function (event) {
     event.preventDefault();
@@ -17,11 +16,16 @@ $(function () {
     }
   });
 
+  
   $(".create-form").on("submit", function (event) {
     event.preventDefault();
 
+    if($("ul li").length > 5) {
+      alert("You cannot not add more Pokemon's. Please delete before ading more");
+      return;
+    }
+
     var userInput = $("#pokemonText").val().trim();
-    
     var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + userInput.toLowerCase();
 
     console.log(pokeURL)

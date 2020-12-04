@@ -69,6 +69,10 @@ body {
   align-items: center;
 }
 
+.typeOne, .typeTwo {
+  margin: 0px 5px;
+}
+
 .list .delete {
   float:right;
 }
