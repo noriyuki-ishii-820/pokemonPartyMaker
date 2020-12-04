@@ -1,0 +1,138 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#header {
+  text-align: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-family: "Bangers", cursive;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 5px;
+}
+
+.mainSection {
+  margin-bottom: 30px !important;
+}
+
+.mainSection div {
+  min-height: 400px;
+}
+
+.box {
+  margin: 0px 5px 0px 5px !important;
+  background: rgb(255, 255, 255, 0.6);
+  border: black 1px;
+}
+
+.headings {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.pokemonLine {
+  height: 100px;
+  line-height: 100px;
+  vertical-align:middle;
+  background: rgb(255, 255, 255, 0.4);
+  border-radius: 3px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  width:100%;
+}
+
+.delete {
+  display:block;
+  right: 0;
+}
+
+li .button {
+  float: right;
+  height: 50px;
+}
+
+.submitBox {
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  margin-right: 2px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .mainSection {
+    width: 80% !important;
+    margin: auto !important;
+  }
+
+  .mainSection div {
+    min-height: 100px;
+  }
+
+  .box {
+    margin-bottom: 10px !important;
+  }
+
+  .columns.is-centered {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .submitBox {
+    width: 60% !important;
+    margin: auto !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #header {
+    font-size: 50px;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .submitBox {
+    width: 80% !important;
+    margin: auto !important;
+  }
+}

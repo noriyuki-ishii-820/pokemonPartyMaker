@@ -1,0 +1,33 @@
+<div class="columns is-centered">
+    <div class="column">
+        <h1 id="header">Pokemon Party Maker</h1>
+    </div>
+</div>
+
+<div class="columns  is-centered">
+    <div class="column is-half box submitBox">
+        <h2 class="headings">Add Pokemon to your Party</h2>
+        <form class="create-form">
+            <div class="form-group">
+                <input type="text" id="pokemonText" name="pokemon" placeholder="Search Your Pokemon">
+                <button type="submit" id="submit" class="button is-success submitBtn">Submit</button>
+            </div>
+
+            <p>Enter a burger you want to eat and click the "Submit" button!</p>
+        </form>
+    </div>
+</div>
+
+
+<div class="columns is-centered mainSection">
+    <div class="column is-half box">
+        <h2 class="headings"></i>My Party</h2>
+        <ul class="list">
+            {{#each pokemonParty}}
+            <li class="pokemonLine"><img src="{{this.pokeImage}}"> {{this.pokeName}} 
+            <a class="delete is-large" data-id="{{this.id}}"></a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
