@@ -26,13 +26,23 @@ $(function () {
     }
 
     var userInput = $("#pokemonText").val().trim();
-    var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + userInput.toLowerCase();
 
-    console.log(pokeURL)
     if (userInput == "") {
       alert("Invalid input. Please try again!");
       location.reload();
+    } else if (userInput == "mimikyu"){
+      var userInput = "mimikyu-disguised";
+
     }
+
+    console.log(userInput)
+
+    
+    var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + userInput.toLowerCase();
+
+    console.log(pokeURL)
+
+
 
     $.ajax({
       url: pokeURL,
@@ -46,6 +56,14 @@ $(function () {
         var type2 = response.types[1].type.name;
       } else {
         var type2 = null;
+      }
+
+      if (document.getElementById("shiny").checked){
+          var pokeImage = response.sprites.front_shiny
+      }
+
+      if (pokeName == "Mimikyu-disguised"){
+        var pokeName = "Mimikyu";
       }
 
       var newPokemon = {
