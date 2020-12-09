@@ -23,8 +23,8 @@ $(function () {
   $(".create-form").on("submit", function (event) {
     event.preventDefault();
 
-    if($("ul li").length > 5) {
-      alert("You cannot not add more Pokemon's. Please delete before ading more");
+    if($(".list .pokemonLine").length > 5) {
+      alert("You cannot not add more Pokemon's. Please delete before adding more");
       return;
     }
 
@@ -89,14 +89,17 @@ $(function () {
 
 $(document).ready(function(){
   $("#pokemonText").keyup(function(){
+      $(".liveSearch").css("display", "block")
       $("#result").html("");
-      var searchField = $("#pokemonText").val();
+      var searchField = $("#pokemonText").val().toLowerCase();
+      console.log(searchField);
       if (searchField.length > 4){
       $.getJSON("https://pokeapi.co/api/v2/pokemon/?limit=1200", function(data){
            for(i=0; i < data.results.length; i++){
              if(data.results[i].name.indexOf(searchField) != -1){
              console.log (data.results[i].name)
              $("#result").append('<li class="list-group-item link-class">' + data.results[i].name + '</li>');
+          
            }
         }
       })

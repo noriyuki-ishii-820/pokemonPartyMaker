@@ -32,6 +32,33 @@ body {
   letter-spacing: 5px;
 }
 
+.liveSearch {
+  display:none;
+  text-align:left;
+  margin:5px 20% 0;
+  padding: 5px;
+  background-color: rgb(255, 255, 255, 0.6);
+  border-radius:5px;
+}
+
+.liveSearch ul {
+  cursor: pointer;
+}
+
+.liveSearch ul li {
+  height:50px;
+  line-height:50px;
+}
+
+.liveSearch ul li:hover {
+  background-color:rgb(255, 255, 255, 0.9)
+}
+
+.didYouMean {
+  font-style:italic;
+  color:darkred;
+}
+
 .mainSection {
   margin-bottom: 30px !important;
 }

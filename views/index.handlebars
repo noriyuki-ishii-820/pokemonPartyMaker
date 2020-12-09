@@ -10,10 +10,14 @@
         <form class="create-form">
             <div class="form-group">
                 <input type="text" id="pokemonText" name="pokemon" placeholder="Search Your Pokemon">
-                <ul class="list-group" id="result"></ul>
-                <button type="submit" id="submit" class="button is-success submitBtn">Submit</button>
+                <button type="submit" id="submit" class="button is-success submitBtn">Submit</button><br />
             </div>
         </form>
+        <div class="liveSearch">
+            <h4 class="didYouMean">Did you mean:</h4>
+            <ul class="list-group" id="result"></ul>
+        </div> 
+        
         <div class="control">
             <label class="radio">
                 <input type="radio" name="shiny" id="shiny">
@@ -31,7 +35,7 @@
         <h2 class="headings"></i>My Party</h2>
         <ul class="list">
             {{#each pokemonParty}}
-            <li class="pokemonLine"><img src="{{this.pokeImage}}"> {{this.pokeName}} 
+            <li class="pokemonLine"><img src="{{this.pokeImage}}" alt='NoImage'> {{this.pokeName}} 
             <button class="tag typeOne" type-id="{{this.type1}}">{{this.type1}}</button>
             {{#if type2}}
             <button class="tag typeTwo" type-id="{{this.type2}}">{{this.type2}}</button>
