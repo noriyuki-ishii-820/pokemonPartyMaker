@@ -1,3 +1,7 @@
+//const { response } = require("express");
+
+//const { response } = require("express");
+
 //const { post } = require("../../../controllers/pokemon_controller");
 $(function () {
   $(".delete").on("click", function (event) {
@@ -15,6 +19,28 @@ $(function () {
       return;
     }
   });
+
+
+  // $("#pokemonText").autocomplete({
+  //     source:function (req, res) {
+  //       var userInput = $("#pokemonText").val().trim();
+  //         $.ajax({
+  //           url:"http://pokeapi.co/api/v2/pokemon/",
+  //           dataType: "json",
+  //           data: {
+  //              q: req.term
+  //           },
+  //           minLength:3 ,
+  //           success: function(data){
+  //             ($.map(data.name, function (item){
+  //               return {
+  //                  name: item
+  //               }
+  //             }))
+  //           }
+  //         })
+  //     }
+  // })
 
   
   $(".create-form").on("submit", function (event) {
@@ -41,8 +67,6 @@ $(function () {
     var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + userInput.toLowerCase();
 
     console.log(pokeURL)
-
-
 
     $.ajax({
       url: pokeURL,
@@ -85,3 +109,20 @@ $(function () {
   })
 });
 
+
+$(document).ready(function(){
+  $("#pokemonText").keyup(function(){
+      $("#result").html("");
+      var searchField = $("#pokemonText").val();
+      if (searchField.length > 4){
+      $.getJSON("https://pokeapi.co/api/v2/pokemon/?limit=1200", function(data){
+           for(i=0; i < data.results.length; i++){
+             if(data.results[i].name.indexOf(searchField) != -1){
+             console.log (data.results[i].name)
+             $("#result").append('<li class="list-group-item link-class">' + data.results[i].name + '</li>');
+           }
+        }
+      })
+  }})
+    
+  })
