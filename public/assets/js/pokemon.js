@@ -20,29 +20,6 @@ $(function () {
     }
   });
 
-
-  // $("#pokemonText").autocomplete({
-  //     source:function (req, res) {
-  //       var userInput = $("#pokemonText").val().trim();
-  //         $.ajax({
-  //           url:"http://pokeapi.co/api/v2/pokemon/",
-  //           dataType: "json",
-  //           data: {
-  //              q: req.term
-  //           },
-  //           minLength:3 ,
-  //           success: function(data){
-  //             ($.map(data.name, function (item){
-  //               return {
-  //                  name: item
-  //               }
-  //             }))
-  //           }
-  //         })
-  //     }
-  // })
-
-  
   $(".create-form").on("submit", function (event) {
     event.preventDefault();
 
@@ -124,5 +101,11 @@ $(document).ready(function(){
         }
       })
   }})
-    
+
+  $("#result").on("click",'li', function(){
+    var click_pokemon = $(this).text();
+    $("#pokemonText").val($.trim(click_pokemon));
+    $("#result").html("")
   })
+
+})
