@@ -1,3 +1,6 @@
+{{> navbar}}
+
+<main>
 <div class="columns is-centered">
     <div class="column">
         <h1 id="header">Pokemon Party Maker</h1>
@@ -36,6 +39,7 @@
         <ul class="list">
             {{#each pokemonParty}}
             <li class="pokemonLine"><img src="{{this.pokeImage}}" alt='NoImage'> {{this.pokeName}} 
+
             <button class="tag typeOne" type-id="{{this.type1}}">{{this.type1}}</button>
             {{#if type2}}
             <button class="tag typeTwo" type-id="{{this.type2}}">{{this.type2}}</button>
@@ -47,3 +51,6 @@
     </div>
 </div>
 
+</main>
+
+{{>footer}}

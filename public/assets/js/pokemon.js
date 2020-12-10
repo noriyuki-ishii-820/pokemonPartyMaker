@@ -28,7 +28,7 @@ $(function () {
       return;
     }
 
-    var userInput = $("#pokemonText").val().trim();
+    var userInput = $("#pokemonText").val().trim().toLowerCase();
 
     if (userInput == "") {
       alert("Invalid input. Please try again!");
@@ -93,12 +93,12 @@ $(document).ready(function(){
       $("#result").html("");
       var searchField = $("#pokemonText").val().toLowerCase();
       console.log(searchField);
-      if (searchField.length > 4){
+      if (searchField.length > 3){
       $.getJSON("https://pokeapi.co/api/v2/pokemon/?limit=1200", function(data){
            for(i=0; i < data.results.length; i++){
              if(data.results[i].name.indexOf(searchField) != -1){
-             console.log (data.results[i].name)
-             $("#result").append('<li class="list-group-item link-class">' + data.results[i].name + '</li>');
+              var displayName = data.results[i].name.charAt(0).toUpperCase() + data.results[i].name.slice(1);
+             $("#result").append('<li class="list-group-item link-class">' + displayName + '</li>');
           
            }
         }
@@ -106,8 +106,9 @@ $(document).ready(function(){
   }})
 
   $("#result").on("click",'li', function(){
-    var click_pokemon = $(this).text();
-    $("#pokemonText").val($.trim(click_pokemon));
+    var click_pokemon = $(this).text().toLowerCase();
+    var searchedName = click_pokemon.charAt(0).toUpperCase() + click_pokemon.slice(1);
+    $("#pokemonText").val($.trim(searchedName));
     $("#result").html("")
   })
 
